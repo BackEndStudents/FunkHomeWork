@@ -27,11 +27,18 @@ namespace FuncHW
 
             //Func*** funcPersonIsActive = ***;
             //Func*** funcPersonPhoneNumberStartsWith7 = ***;
+            Func<Person, bool> funcPersonPhoneNumberStartsWith7 = (Person person) => 
+                person.PhoneNumber / 10000 == 7;
+
             //Func*** funcPersonIsChild = ***;
             //Func*** funcPersonHasShortName = ***;
 
             //Func*** funcCatIsDomestic = ***;
             //Func*** funcCatColorIsDark = ***;
+            Func<Cat, bool> funcCatColorIsDark=(Cat cat)=> 
+                string.Equals(cat.Color, "grey",StringComparison.OrdinalIgnoreCase) 
+                || string.Equals(cat.Color, "black", StringComparison.OrdinalIgnoreCase);
+
             //Func*** funcCatNameConteinsU = ***;
             //Func*** funcCatIsDomesticAndWhite = ***;
 
