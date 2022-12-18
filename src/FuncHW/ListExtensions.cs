@@ -13,14 +13,15 @@ namespace FuncHW
 
         //add extension for List SelectWhereNot: receives Func, returns the list of elements that don't match the condition
         public static List<T> SelectWhereNot<T>(this List<T> values, Func<T, bool> func)
-            where T : class
         {
             List<T> resultList = new List<T>();
 
             foreach (var item in values)
             {
-                if(!func(item))
+                if (!func(item))
+                {
                     resultList.Add(item);
+                }
             }
 
             return resultList;
