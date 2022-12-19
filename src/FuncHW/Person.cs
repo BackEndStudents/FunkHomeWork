@@ -2,7 +2,7 @@
 
 namespace FuncHW
 {
-    public class Person
+    public record Person
     {
         public string Name { get; set; }
         public int PhoneNumber { get; set; }
