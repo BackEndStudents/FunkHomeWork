@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FuncHW
+﻿namespace FuncHW
 {
     public static class ListExtensions
     {

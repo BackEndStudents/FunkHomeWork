@@ -25,16 +25,6 @@ namespace FuncHW
 
             List<Cat> cats = new() { barsik, pushok, murzik, dymok, murka };
 
-            //Func*** funcPersonIsActive = ***;
-            //Func*** funcPersonPhoneNumberStartsWith7 = ***;
-            //Func*** funcPersonIsChild = ***;
-            //Func*** funcPersonHasShortName = ***;
-
-            //Func*** funcCatIsDomestic = ***;
-            //Func*** funcCatColorIsDark = ***;
-            //Func*** funcCatNameConteinsU = ***;
-            //Func*** funcCatIsDomesticAndWhite = ***;
-
             //write result to variable
             //check using debug and breakpoint
         }
