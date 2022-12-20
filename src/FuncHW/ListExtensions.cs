@@ -13,16 +13,16 @@ namespace FuncHW
 
         //add extension for List SelectWhereNot: receives Func, returns the list of elements that don't match the condition
 
-        public static T GetLast<T>(this List<T> values, Func<T, bool> func) where T : new()
+        public static T GetLast<T>(this List<T> values, Func<T, bool> func) where T : class
         {
-            for (int i = values.Count-1; i >= 0; i--)
+            for (int i = values.Count - 1; i >= 0; i--)
             {
                 if (func(values[i]))
                 {
                     return values[i];
                 }
             }
-            return new T();
+            return null;
         }
     }
 }

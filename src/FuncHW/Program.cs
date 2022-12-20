@@ -30,21 +30,15 @@ namespace FuncHW
             //Func*** funcPersonIsChild = ***;
             //Func*** funcPersonHasShortName = ***;
 
-            Func<Person, bool> funcPersonHasShortName = (Person persons) =>
-            {
-                return persons.Name.Length < 5;
-            };
+            Func<Person, bool> funcPersonHasShortName = (Person persons) => persons.Name.Length < 5;
 
             //Func*** funcCatIsDomestic = ***;
             //Func*** funcCatColorIsDark = ***;
             //Func*** funcCatNameConteinsU = ***;
             //Func*** funcCatIsDomesticAndWhite = ***;
 
-            Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) =>
-            {
-                return cat.Color == "white" && cat.IsDomestic;
-            };
-
+            Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) => cat.Color == "white" && cat.IsDomestic;
+            
             //write result to variable
             //check using debug and breakpoint
 
