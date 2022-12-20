@@ -42,8 +42,6 @@ namespace FuncHW
             int res2 = ListExtensions.CountElements(cats, funcCatIsDomestic);
             Console.WriteLine($"Количество персон старше 17 лет: {res1}\n" +
                               $"Количество домашних котиков: {res2}");
-            //write result to variable
-            //check using debug and breakpoint
         }
     }
 }
