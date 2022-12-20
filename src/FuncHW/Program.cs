@@ -28,20 +28,21 @@ namespace FuncHW
             //Func*** funcPersonIsActive = ***;
             //Func*** funcPersonPhoneNumberStartsWith7 = ***;
 
-            Func<Person, bool> funcPersonIsChild = (Person person) => DateTime.Now.Year - person.BirthDate.Year > 17;
+            Func<Person, bool> funcPersonIsChild = (Person person) => DateTime.Now.Year - person.BirthDate.Year < 17;
 
             //Func*** funcPersonHasShortName = ***;
 
-            Func<Cat, bool> funcCatIsDomestic = (Cat cats) => cats.IsDomestic;
+            Func<Cat, bool> funcCatIsDomestic = (Cat cat) => cat.IsDomestic;
 
             //Func*** funcCatColorIsDark = ***;
             //Func*** funcCatNameConteinsU = ***;
             //Func*** funcCatIsDomesticAndWhite = ***;
 
-            int res1 = ListExtensions.CountElements(persons, funcPersonIsChild);
-            int res2 = ListExtensions.CountElements(cats, funcCatIsDomestic);
-            Console.WriteLine($"Количество персон старше 17 лет: {res1}\n" +
-                              $"Количество домашних котиков: {res2}");
+            int countPersonIsChild = ListExtensions.CountElements(persons, funcPersonIsChild);
+            int countCatIsDomestic = ListExtensions.CountElements(cats, funcCatIsDomestic);
+
+            Console.WriteLine($"Количество персон старше 17 лет: {countPersonIsChild}\n" +
+                              $"Количество домашних котиков: {countCatIsDomestic}");
         }
     }
 }

@@ -20,6 +20,7 @@ namespace FuncHW
                 }
             }
             int count = resultList.Count;
+
             return count;
         }
 
