@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection.PortableExecutable;
 
 namespace FuncHW
 {
@@ -26,28 +25,28 @@ namespace FuncHW
 
             List<Cat> cats = new() { barsik, pushok, murzik, dymok, murka };
 
+            //Func*** funcPersonIsActive = ***;
+            //Func*** funcPersonPhoneNumberStartsWith7 = ***;
+            //Func*** funcPersonIsChild = ***;
+            //Func*** funcPersonHasShortName = ***;
+
             Func<Person, bool> funcPersonHasShortName = (Person persons) =>
             {
-                string name = persons.Name;
-
-                if (name.Length < 5)
-                {
-                    return true;
-                }
-                return false;
+                return persons.Name.Length < 5;
             };
+
+            //Func*** funcCatIsDomestic = ***;
+            //Func*** funcCatColorIsDark = ***;
+            //Func*** funcCatNameConteinsU = ***;
+            //Func*** funcCatIsDomesticAndWhite = ***;
 
             Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) =>
             {
-                string colorCat = cat.Color;
-                bool domesticCat = cat.IsDomestic;
-
-                if (colorCat == "white" && domesticCat)
-                {
-                    return true;
-                }
-                return false;
+                return cat.Color == "white" && cat.IsDomestic;
             };
+
+            //write result to variable
+            //check using debug and breakpoint
 
             Person personHasShortName = persons.GetLast(funcPersonHasShortName);
             Cat catIsDomesticAndWhite = cats.GetLast(funcCatIsDomesticAndWhite);
