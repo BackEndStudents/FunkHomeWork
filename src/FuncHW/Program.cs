@@ -41,7 +41,7 @@ namespace FuncHW
             int countPersonIsChild = ListExtensions.CountElements(persons, funcPersonIsChild);
             int countCatIsDomestic = ListExtensions.CountElements(cats, funcCatIsDomestic);
 
-            Console.WriteLine($"Количество персон старше 17 лет: {countPersonIsChild}\n" +
+            Console.WriteLine($"Количество персон младше 17 лет: {countPersonIsChild}\n" +
                               $"Количество домашних котиков: {countCatIsDomestic}");
         }
     }

@@ -19,9 +19,8 @@ namespace FuncHW
                     resultList.Add(item);
                 }
             }
-            int count = resultList.Count;
 
-            return count;
+            return resultList.Count;
         }
 
         //add extension for List SelectWhereNot: receives Func, returns the list of elements that don't match the condition
