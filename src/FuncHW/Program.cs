@@ -42,6 +42,8 @@ namespace FuncHW
             //Func*** funcPersonIsChild = ***;
             //Func*** funcPersonHasShortName = ***;
 
+            Func<Person, bool> funcPersonHasShortName = (Person persons) => persons.Name.Length < 5;
+
             //Func*** funcCatIsDomestic = ***;
 
             Func<Cat, bool> funcCatColorIsDark = (Cat cat) => 
@@ -54,6 +56,14 @@ namespace FuncHW
             List<Person> personsPhoneNumberDontStartsWith7 = persons.SelectWhereNot(funcPersonPhoneNumberStartsWith7);
 
             List<Cat> catsColorNotDark = cats.SelectWhereNot(funcCatColorIsDark);
+
+            Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) => cat.Color == "white" && cat.IsDomestic;
+            
+            //write result to variable
+            //check using debug and breakpoint
+
+            Person personHasShortName = persons.GetLast(funcPersonHasShortName);
+            Cat catIsDomesticAndWhite = cats.GetLast(funcCatIsDomesticAndWhite);
         }
     }
 }
