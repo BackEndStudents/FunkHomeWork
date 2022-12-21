@@ -26,16 +26,36 @@ namespace FuncHW
             List<Cat> cats = new() { barsik, pushok, murzik, dymok, murka };
 
             //Func*** funcPersonIsActive = ***;
-            //Func*** funcPersonPhoneNumberStartsWith7 = ***;
+
+            Func<Person, bool> funcPersonPhoneNumberStartsWith7 = (Person person) => 
+            {
+                int phoneNumber = person.PhoneNumber;
+
+                while (phoneNumber > 10)
+                {
+                    phoneNumber /= 10;
+                }
+
+                return phoneNumber == 7;
+            };
+
             //Func*** funcPersonIsChild = ***;
             //Func*** funcPersonHasShortName = ***;
 
             Func<Person, bool> funcPersonHasShortName = (Person persons) => persons.Name.Length < 5;
 
             //Func*** funcCatIsDomestic = ***;
-            //Func*** funcCatColorIsDark = ***;
+
+            Func<Cat, bool> funcCatColorIsDark = (Cat cat) => 
+                string.Equals(cat.Color, "grey", StringComparison.OrdinalIgnoreCase) 
+                || string.Equals(cat.Color, "black", StringComparison.OrdinalIgnoreCase);
+            
             //Func*** funcCatNameConteinsU = ***;
             //Func*** funcCatIsDomesticAndWhite = ***;
+            
+            List<Person> personsPhoneNumberDontStartsWith7 = persons.SelectWhereNot(funcPersonPhoneNumberStartsWith7);
+
+            List<Cat> catsColorNotDark = cats.SelectWhereNot(funcCatColorIsDark);
 
             Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) => cat.Color == "white" && cat.IsDomestic;
             
