@@ -11,16 +11,16 @@ namespace FuncHW
 
         public static int CountElements<T>(this List<T> values, Func<T, bool> func)
         {
-            List<T> resultList = new();
+            int count = 0;
             foreach (T item in values)
             {
                 if (func(item))
                 {
-                    resultList.Add(item);
+                    count++;
                 }
             }
 
-            return resultList.Count;
+            return count;
         }
 
         //add extension for List SelectWhereNot: receives Func, returns the list of elements that don't match the condition
