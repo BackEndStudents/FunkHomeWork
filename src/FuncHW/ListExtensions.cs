@@ -9,7 +9,19 @@ namespace FuncHW
 
         //add extension for List GetFirst: receives Func, returns the first element in the List that matches the condition
 
-        //add extension for List CountElements: receives Func, returns the number of elements that match the condition
+        public static int CountElements<T>(this List<T> values, Func<T, bool> func)
+        {
+            int count = 0;
+            foreach (T item in values)
+            {
+                if (func(item))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
 
         public static List<T> SelectWhereNot<T>(this List<T> values, Func<T, bool> func)
         {

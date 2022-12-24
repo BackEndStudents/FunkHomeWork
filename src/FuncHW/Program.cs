@@ -40,11 +40,17 @@ namespace FuncHW
             };
 
             //Func*** funcPersonIsChild = ***;
+            //Func*** funcPersonPhoneNumberStartsWith7 = ***;
+
+            Func<Person, bool> funcPersonIsChild = (Person person) => DateTime.Now.Year - person.BirthDate.Year < 17;
+
             //Func*** funcPersonHasShortName = ***;
 
             Func<Person, bool> funcPersonHasShortName = (Person persons) => persons.Name.Length < 5;
 
             //Func*** funcCatIsDomestic = ***;
+            Func<Cat, bool> funcCatIsDomestic = (Cat cat) => cat.IsDomestic;
+
 
             Func<Cat, bool> funcCatColorIsDark = (Cat cat) => 
                 string.Equals(cat.Color, "grey", StringComparison.OrdinalIgnoreCase) 
@@ -64,6 +70,12 @@ namespace FuncHW
 
             Person personHasShortName = persons.GetLast(funcPersonHasShortName);
             Cat catIsDomesticAndWhite = cats.GetLast(funcCatIsDomesticAndWhite);
+
+            int countPersonIsChild = ListExtensions.CountElements(persons, funcPersonIsChild);
+            int countCatIsDomestic = ListExtensions.CountElements(cats, funcCatIsDomestic);
+
+            Console.WriteLine($"Количество персон младше 17 лет: {countPersonIsChild}\n" +
+                              $"Количество домашних котиков: {countCatIsDomestic}");
         }
     }
 }
