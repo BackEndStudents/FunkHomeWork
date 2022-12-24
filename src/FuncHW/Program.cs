@@ -26,17 +26,50 @@ namespace FuncHW
             List<Cat> cats = new() { barsik, pushok, murzik, dymok, murka };
 
             //Func*** funcPersonIsActive = ***;
+
+            Func<Person, bool> funcPersonPhoneNumberStartsWith7 = (Person person) => 
+            {
+                int phoneNumber = person.PhoneNumber;
+
+                while (phoneNumber > 10)
+                {
+                    phoneNumber /= 10;
+                }
+
+                return phoneNumber == 7;
+            };
+
+            //Func*** funcPersonIsChild = ***;
             //Func*** funcPersonPhoneNumberStartsWith7 = ***;
 
             Func<Person, bool> funcPersonIsChild = (Person person) => DateTime.Now.Year - person.BirthDate.Year < 17;
 
             //Func*** funcPersonHasShortName = ***;
 
+            Func<Person, bool> funcPersonHasShortName = (Person persons) => persons.Name.Length < 5;
+
+            //Func*** funcCatIsDomestic = ***;
             Func<Cat, bool> funcCatIsDomestic = (Cat cat) => cat.IsDomestic;
 
-            //Func*** funcCatColorIsDark = ***;
+
+            Func<Cat, bool> funcCatColorIsDark = (Cat cat) => 
+                string.Equals(cat.Color, "grey", StringComparison.OrdinalIgnoreCase) 
+                || string.Equals(cat.Color, "black", StringComparison.OrdinalIgnoreCase);
+            
             //Func*** funcCatNameConteinsU = ***;
             //Func*** funcCatIsDomesticAndWhite = ***;
+            
+            List<Person> personsPhoneNumberDontStartsWith7 = persons.SelectWhereNot(funcPersonPhoneNumberStartsWith7);
+
+            List<Cat> catsColorNotDark = cats.SelectWhereNot(funcCatColorIsDark);
+
+            Func<Cat, bool> funcCatIsDomesticAndWhite = (Cat cat) => cat.Color == "white" && cat.IsDomestic;
+            
+            //write result to variable
+            //check using debug and breakpoint
+
+            Person personHasShortName = persons.GetLast(funcPersonHasShortName);
+            Cat catIsDomesticAndWhite = cats.GetLast(funcCatIsDomesticAndWhite);
 
             int countPersonIsChild = ListExtensions.CountElements(persons, funcPersonIsChild);
             int countCatIsDomestic = ListExtensions.CountElements(cats, funcCatIsDomestic);

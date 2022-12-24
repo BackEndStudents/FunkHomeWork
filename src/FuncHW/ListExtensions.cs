@@ -23,6 +23,32 @@ namespace FuncHW
             return count;
         }
 
+        public static List<T> SelectWhereNot<T>(this List<T> values, Func<T, bool> func)
+        {
+            List<T> resultList = new List<T>();
+
+            foreach (var item in values)
+            {
+                if (!func(item))
+                {
+                    resultList.Add(item);
+                }
+            }
+
+            return resultList;
+        }
         //add extension for List SelectWhereNot: receives Func, returns the list of elements that don't match the condition
+
+        public static T GetLast<T>(this List<T> values, Func<T, bool> func) where T : class
+        {
+            for (int i = values.Count - 1; i >= 0; i--)
+            {
+                if (func(values[i]))
+                {
+                    return values[i];
+                }
+            }
+            return null;
+        }
     }
 }
